@@ -1,4 +1,14 @@
 <?php
+/**
+ *抽象工厂方法
+ *优点:
+ *1. 抽象工厂方法可以使用抽象接口创建一组相关的产品,例如本例中一个工厂支持创建 头部和躯干
+ *2. 一个抽象工厂可以创建多个产品,头部,躯干等等
+ *3. 通过替换抽象工厂可以完成对一组相关产品的替换,如通过UglyBabyZhuFactory替换BeautifulBabyZhuFactory可以将所有产品都替换成丑的
+ *
+ * 缺点:
+ * 拓展性,抽象工厂方法的拓展性巨差,如果我们增加了一个产品,比方说手部,那么产品类需要添加新的产品,抽象工厂方法及其子类也都要进行相关编码创建新的产品抽象工厂方法
+ */
 abstract class Body{
     abstract function work();
 }
@@ -74,8 +84,6 @@ class ZhuBaby{
     }
 }
 
-
 $baby = new ZhuBaby();
-
 $baby->initBeautiful();
 $baby->initUgly();
