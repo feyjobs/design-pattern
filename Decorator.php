@@ -11,7 +11,7 @@ abstract class ConfuseEnergy{
 
 class Head extends ConfuseEnergy{
     public function work(){
-        echo "head work!";
+        echo "head work!\n";
     } 
 }
 
@@ -52,7 +52,7 @@ class ShitDecorator extends Decorator{
     }
 }
 $lovehead = new LoveDecorator(new Head());
-$shithead = new ShitDecorator(new Head());
+$shithead = new ShitDecorator($lovehead);
 $lovehead->work();
 $shithead->work();
 
